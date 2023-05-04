@@ -6,6 +6,7 @@ import RecipesLayout from '../Layout/RecipesLayout';
 import Blog from '../Pages/Blog/Blog';
 import RecipeDetails from '../Pages/RecipeDetails/RecipeDetails';
 import Login from '../Pages/Login/Login';
+import Registation from '../Pages/Registration/Registation';
 
 const Router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Router = createBrowserRouter([
             {
                 path:'login',
                 element: <Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Registation></Registation>
             }
         ]
     },

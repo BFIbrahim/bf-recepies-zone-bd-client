@@ -4,6 +4,8 @@ import LoginLayout from '../Layout/LoginLayout';
 import Home from '../Pages/Home/Home';
 import RecipesLayout from '../Layout/RecipesLayout';
 import Blog from '../Pages/Blog/Blog';
+import RecipeDetails from '../Pages/RecipeDetails/RecipeDetails';
+import Login from '../Pages/Login/Login';
 
 const Router = createBrowserRouter([
     {
@@ -17,6 +19,10 @@ const Router = createBrowserRouter([
             {
                 path:'blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'login',
+                element: <Login></Login>
             }
         ]
     },
@@ -28,6 +34,10 @@ const Router = createBrowserRouter([
             {
                 path:'recipe',
                 element:<Home></Home>
+            },
+            {
+                path:'recipeDetails',
+                element: <RecipeDetails></RecipeDetails>
             }            
         ]
     }

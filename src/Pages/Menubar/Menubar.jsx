@@ -5,7 +5,7 @@ import './Menubar.css'
 
 const Menubar = () => {
     return (
-        <div className='d-flex justify-content-between container align-content-center'>
+        <div className='d-flex justify-content-between container align-content-center p-4'>
             <div>
                 <Link className='me-4 text-black' to="/">Home</Link>
                 <Link to="/blog">Blog</Link>

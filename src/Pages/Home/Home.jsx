@@ -8,7 +8,7 @@ const Home = () => {
     const [chef, setChef] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3400/alldata")
+        fetch("https://bf-recipes-zone-bd-server-bfibrahim.vercel.app/alldata")
         .then((res) => res.json())
         .then((data) => setChef(data));
     },[])

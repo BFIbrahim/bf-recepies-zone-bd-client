@@ -12,7 +12,7 @@ const Menubar = () => {
     return (
         <div className='d-flex justify-content-between container align-content-center p-4'>
             <div>
-                <h4><span className='text-danger'>BF</span> Recipes Zone</h4>
+                <Link to='/'><h4><span className='text-danger'>BF</span> Recipes Zone</h4></Link>
             </div>
 
             <div>

@@ -42,10 +42,17 @@ const Router = createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path:':id',
+                path:':Id',
                 element: <SecretRoute>
                     <RecipeDetails></RecipeDetails>
-                </SecretRoute>
+                </SecretRoute>,
+
+                loader: async({params}) => {
+                    const res = await fetch('https://bf-recipes-zone-bd-server-bfibrahim.vercel.app/alldata')
+                    const data = await res.json();
+                    const recipes = data.find(recipe => recipe.id == params.Id)
+                    return recipes
+                }
             }            
         ]
     }

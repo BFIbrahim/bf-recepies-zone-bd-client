@@ -11,7 +11,8 @@ const Registation = () => {
     const [photoUrl, setPhotoUrl] = useState()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState()
+    const [error, setError] = useState('')
+    const [success, setSucess] = useState('')
 
 
     const hundleRegister = (event) =>{
@@ -20,6 +21,9 @@ const Registation = () => {
         if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
             setError('password is so week please create a strong Password')
             return
+        }
+        else{
+            setSucess("Register Successfull")
         }
 
         if(name, email, password, photoUrl){
@@ -71,6 +75,7 @@ const Registation = () => {
                 </Form.Text>
                 
                 <Form.Text className="text-success">
+                    {success}
                 </Form.Text>
 
                 <Form.Text className="text-danger">

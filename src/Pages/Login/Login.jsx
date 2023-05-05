@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
+
+    const {loginuser} = useContext(AuthContext)
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,7 +14,15 @@ const Login = () => {
 
     const hundleLogin = (event) =>{
         event.preventDefault();
-        console.log('clicked')
+        if(email, password){
+            loginUser(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
+        }
     }
 
     return (

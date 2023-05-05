@@ -7,6 +7,7 @@ import Blog from '../Pages/Blog/Blog';
 import RecipeDetails from '../Pages/RecipeDetails/RecipeDetails';
 import Login from '../Pages/Login/Login';
 import Registation from '../Pages/Registration/Registation';
+import SecretRoute from './SecretRoute';
 
 const Router = createBrowserRouter([
     {
@@ -42,7 +43,9 @@ const Router = createBrowserRouter([
             },
             {
                 path:':id',
-                element: <RecipeDetails></RecipeDetails>
+                element: <SecretRoute>
+                    <RecipeDetails></RecipeDetails>
+                </SecretRoute>
             }            
         ]
     }

@@ -1,19 +1,37 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Registation = () => {
+
+    const {registerUser} = useContext(AuthContext)
 
     const [name, setName] = useState("");
     const [photoUrl, setPhotoUrl] = useState()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState()
 
-    console.log(photoUrl)
 
     const hundleRegister = (event) =>{
         event.preventDefault();
-        console.log('regiter clicked')
+
+        if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
+            setError('password is so week please create a strong Password')
+            return
+        }
+
+        if(name, email, password, photoUrl){
+            registerUser(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(err => {
+                console.log(err.message);
+            })
+        }
+
     }
 
     return (
@@ -56,6 +74,7 @@ const Registation = () => {
                 </Form.Text>
 
                 <Form.Text className="text-danger">
+                    {error}
                 </Form.Text>
             </Form>
 

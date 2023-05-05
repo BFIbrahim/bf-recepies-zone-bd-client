@@ -13,7 +13,6 @@ const Header = () => {
                                 <h1>Welcome To <br /><span className='text-danger'>BF</span> Recipes Zone</h1>
                                 <p>Discover the ultimate culinary experience at BF Food Zone! Indulge in delicious flavors, expertly crafted dishes, and satisfying meals that will tantalize your taste buds. Order online now!</p>
                             </div>
-                            <div className='col-md-6'></div>
                         </div>
                     </div>
                 </div>

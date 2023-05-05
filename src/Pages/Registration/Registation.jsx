@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Registation = () => {
+
+    const [name, setName] = useState("");
+    const [photoUrl, setPhotoUrl] = useState()
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    console.log(photoUrl)
+
+    const hundleRegister = (event) =>{
+        event.preventDefault();
+        console.log('regiter clicked')
+    }
+
     return (
         <div>
              <Container className='mx-auto w-25 mt-5'>
@@ -10,28 +23,28 @@ const Registation = () => {
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
-                    <Form.Control type="name" name='name' placeholder="Enter Your Name" required />
+                    <Form.Control onChange={(e) => setName(e.target.value)} type="name" name='name' placeholder="Enter Your Name" required />
 
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Photo Url</Form.Label>
-                    <Form.Control type="text" name='photo' placeholder="Your Photo Url" required />
+                    <Form.Control onChange={(e) => setPhotoUrl(e.target.value)} type="text" name='photo' placeholder="Your Photo Url" required />
 
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" required />
+                    <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="Enter email" required />
 
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" required />
+                    <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" name='accepts' label="Accept terms and conditions" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button onClick={hundleRegister} variant="primary" type="submit">
                     Register
                 </Button>
                 <br />
